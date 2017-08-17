@@ -1,0 +1,122 @@
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.hand.Servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.hand.Servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FindAllServlet</servlet-name>
+    <servlet-class>com.hand.Servlet.FindAllServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindAllServlet</servlet-name>
+    <url-pattern>/findAll</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>com.hand.Servlet.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/DeleteServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AddServlet</servlet-name>
+    <servlet-class>com.hand.Servlet.AddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddServlet</servlet-name>
+    <url-pattern>/AddServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FindOneServlet</servlet-name>
+    <servlet-class>com.hand.Servlet.FindOneServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindOneServlet</servlet-name>
+    <url-pattern>/FindOneServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UpdateServlet</servlet-name>
+    <servlet-class>com.hand.Servlet.UpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateServlet</servlet-name>
+    <url-pattern>/UpdateServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FindLanServlet</servlet-name>
+    <servlet-class>com.hand.Servlet.FindLanServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindLanServlet</servlet-name>
+    <url-pattern>/FindLanServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.hand.Filter.EncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>PermissionFilter</filter-name>
+    <filter-class>com.hand.Filter.PermissionFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>PermissionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
+
+
+  <servlet>
+    <servlet-name>DruidStatView</servlet-name>
+    <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DruidStatView</servlet-name>
+    <url-pattern>/druid/*</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      classpath*:beans.xml
+    </param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+</web-app>
